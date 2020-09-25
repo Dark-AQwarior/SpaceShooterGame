@@ -1,3 +1,4 @@
+//Declaring variables and Assigning all the images to the variables in JS
 let gameBackground = new Image();
 gameBackground.src = "images/space.jpg";
 let spaceShip = new Image();
@@ -6,10 +7,10 @@ let missile = new Image();
 missile.src = "images/missile.png";
 let alienShip = new Image();
 alienShip.src = "images/enemy.png";
-
 let boom = new Image();
 boom.src = "images/boom.png";
 
+//Linking the audios to the JavaScript Variables
 let shipDestroyed = new Audio('audio/shipDestroyed.mp3');
 let shootSound = new Audio('audio/shoot.mp3');
 let gameBGM = new Audio('audio/gameBGM.mp3');
@@ -20,11 +21,14 @@ gameBGM.addEventListener('ended', function() {
     this.play();
 }, false);
 
+//Game Starts after hitting Space on the Main Screen 
 function canvasStart() {
+    //setting the Height and Width of the Game Play area
     let canvasElement = document.getElementById("canvas").getContext('2d');
     let cW = canvasElement.canvas.width;
     let cH = canvasElement.canvas.height;
 
+    //Declaring other variables to be used to make game possible
     document.getElementById("canvas").focus();
     let gameOver = false;
     let shootingTarget = 0;
@@ -34,6 +38,7 @@ function canvasStart() {
     let highScore = 0;
     let counter = 0;
 
+    //Setting the background image of the game 
     function Background() {
         this.x = 0;
         this.y = 0;
@@ -47,6 +52,7 @@ function canvasStart() {
         }
     }
 
+    //ShapeShip Function, to make the play possible
     function spaceShipAnimation() {
         this.x = 20;
         this.y = cH / 2 - 50;
@@ -70,6 +76,7 @@ function canvasStart() {
         }
     }
 
+    //Defining the missile function and setting all the values needed to shoot the missile
     function Missile(sX, sY) {
         this.x = sX - 30;
         this.y = sY - 7;
@@ -81,6 +88,7 @@ function canvasStart() {
 
     }
 
+    //Defining the Enemy/AlienShip function and setting all the values needed to move the alien ship towards the spaceship
     function Enemy() {
         this.x = cW;
         this.y = Math.floor(Math.random() * (cH - 80));
@@ -92,6 +100,7 @@ function canvasStart() {
         }
     }
 
+    //Shooting Effect
     function shoot() {
         if (spaceHit && (shootingTarget == 1)) {
             setTimeout(() => {
@@ -111,6 +120,7 @@ function canvasStart() {
     let moveUp = false;
     let moveDown = false;
 
+    //Main Animation required for the functionality of the game
     function animate() {
         if (gameOver) {
             canvasElement.font = "bold 72px Arial, sans-serif";
@@ -257,6 +267,7 @@ function canvasStart() {
 
 }
 
+//Main Page which loads on the screen when website loads
 function mainLoadingPage() {
     let canvasElement = document.getElementById("canvas").getContext('2d');
     let cW = canvasElement.canvas.width;
@@ -278,6 +289,7 @@ function mainLoadingPage() {
     });
 }
 
+//When the page loads, the message is shown to hit space so that the game starts
 window.addEventListener('load', function(event) {
     mainLoadingPage();
 
