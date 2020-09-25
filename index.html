@@ -49,31 +49,6 @@
             }
         }
         
-        .blinking {
-            animation: blinkingText 1.2s infinite;
-        }
-        
-        @keyframes blinkingText {
-            0% {
-                color: #fff;
-            }
-            49% {
-                color: rgba(255, 255, 255, 0.651);
-            }
-            60% {
-                color: transparent;
-            }
-            75% {
-                color: transparent;
-            }
-            99% {
-                color: rgba(255, 255, 255, 0.568);
-            }
-            100% {
-                color: #fff;
-            }
-        }
-        
         #canvas-container {
             background-color: white;
             max-width: 1060px;
@@ -92,7 +67,7 @@
 
 <body>
     <div id="header">
-        <h1 class="blinking">Space Shooter Game</h1>
+        <h1>Space Shooter Game</h1>
     </div>
     <div id="canvas-container">
         <canvas id="canvas" width="1000" height="500"></canvas>
