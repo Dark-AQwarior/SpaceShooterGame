@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #b22222e8;
+            font-family: cursive;
+        }
+        
+        #header {
+            display: flex;
+            align-items: center;
+            padding: 5px 30px;
+            margin-bottom: 10px;
+            justify-content: space-between;
+            color: wheat;
+            animation: clrchange 3s linear;
+            animation-iteration-count: infinite;
+        }
+        
+        h1 {
+            margin: 0;
+            margin-left: 410px;
+            font-size: 40px;
+        }
+        
+        @keyframes clrchange {
+            0% {
+                color: rgb(243, 184, 75);
+            }
+            25% {
+                color: rgb(223, 172, 79);
+            }
+            50% {
+                color: wheat;
+            }
+            75% {
+                color: white;
+            }
+            100% {
+                color: rgb(247, 205, 129);
+            }
+        }
+        
+        #canvas-container {
+            background-color: white;
+            max-width: 1060px;
+            padding: 8px 0;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        canvas {
+            background-color: #333333;
+            border: 1px solid #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Space Shooter Game</h1>
+    </div>
+    <div id="canvas-container">
+        <canvas id="canvas" width="1000" height="500"></canvas>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
